@@ -1,0 +1,17 @@
+<div class="container-7">
+  <h1>User info</h1>
+  <%#= image_tag user.get_profile_image(100, 100) %>
+  <table>
+    <tr>
+      <th>name</th>
+      <td><%= user.name %></td>
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <td><%= user.introduction %></td>
+    </tr>
+    <tr>
+      <th><%= link_to "編集", edit_user_path %></th>
+    </tr>
+  </table>
+</div>
