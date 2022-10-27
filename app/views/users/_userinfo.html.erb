@@ -1,6 +1,6 @@
 <div class="container-7">
-  <h1>User info</h1>
-  <%#= image_tag user.get_profile_image(100, 100) %>
+  <h2>User info</h2>
+  <%= image_tag user.get_profile_image(100, 100) %>
   <table>
     <tr>
       <th>name</th>
@@ -14,4 +14,14 @@
       <th><%= link_to "編集", edit_user_path %></th>
     </tr>
   </table>
+  <div>
+    <h2>New Book</h2>
+    <%= form_with model: @book do |f| %>
+      <%= f.label "title" %><br>
+      <%= f.text_field :title %><br>
+      <%= f.label "Opinion" %><br>
+      <%= f.text_area :body %><br>
+      <%= f.submit "Create Book" %>
+    <% end %>
+  </div>
 </div>
