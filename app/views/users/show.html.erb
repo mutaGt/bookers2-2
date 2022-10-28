@@ -1,4 +1,22 @@
-<%= render "userinfo", user: @user, profile_image: @profile_image %>
-<div>
-  
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <%= render "userinfo", user: @user, profile_image: @profile_image %>
+    </div>
+  </div>
+  <div class="row">
+    <h2>Books</h2>
+  </div>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Opinion</th>
+      </tr>
+        <% @user.books.each do |book| %> <!--%の後に常に=を入れてしまう癖がある為注意する事。 =を入れてしまうと余計なものが表示される-->
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.body %></td>
+      </tr>
+    </table>
+  <% end %>
 </div>
