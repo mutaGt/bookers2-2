@@ -1,1 +1,18 @@
-本の詳細
+<div class="container">
+  <div class="row mt-3">
+    <div class="col">
+      <%= render "users/userinfo", user: @user, profile_image: @profile_image %>
+    </div>
+    <div class="col-8">
+      <h2>Book detail</h2>
+      <table class="table table-hover table-inverse">
+        <tr>
+          <td><%= image_tag @user.get_profile_image(100,100) %><br>
+          <%= link_to @user.name, user_path(@user) %></td>
+          <td><%= link_to @hon.title, book_path(@hon) %></td>
+          <td><%= @hon.body %></td>
+          <td><%= link_to "Edit", edit_book_path(@hon), class: "btn btn-success" %></td>
+          <td><%= link_to "Destroy", book_path(@hon), method: :delete, class: "btn btn-danger", data: {confirm: "本当に消しますか？"} %></td>
+        </tr>
+      </table>
+    </div>

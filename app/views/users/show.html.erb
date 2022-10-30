@@ -13,7 +13,7 @@
         </tr>
         <% @user.books.each do |book| %> <!--%の後に常に=を入れてしまう癖がある為注意する事。 =を入れてしまうと余計なものが表示される-->
         <tr>
-          <td></td>
+          <td><%= image_tag @user.get_profile_image(80, 80) %></td>
           <td><%= link_to book.title, book_path(book.id) %></td>
           <td><%= book.body %></td>
         </tr>
