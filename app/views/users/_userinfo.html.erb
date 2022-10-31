@@ -11,7 +11,7 @@
       <td><%= user.introduction %></td>
     </tr>
     <tr>
-      <th><%= link_to "編集", edit_user_path %></th>
+      <th><%= link_to "編集", edit_user_path(user) %></th>
     </tr>
   </table>
   <div>
@@ -21,7 +21,7 @@
       <%= f.text_field :title %><br>
       <%= f.label "Opinion" %><br>
       <%= f.text_area :body %><br>
-      <%= f.submit "Create Book" %>
+      <%= f.submit "Create Book", class: "btn btn-success" %>
     <% end %>
   </div>
 </div>
