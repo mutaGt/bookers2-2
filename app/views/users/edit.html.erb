@@ -2,6 +2,14 @@
   <div class="row">
     <div class="col">
       <h2>User info</h2>
+      <% if @user.errors.any? %>
+        <h3><%= @user.errors.count %>error prohibited this obj from being saved:</h3>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
       <%= form_with model: @user do |f| %>
         <%= f.label "Name" %><br>
         <%= f.text_field :name, style: "width: 30%" %><br>
