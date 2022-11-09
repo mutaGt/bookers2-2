@@ -4,16 +4,20 @@
   </p>
 <% end %>
 <div class="container">
-  <div class="row mt-3">
-    <div class="col">
+  <div class="row">
+    <div class="col-md-8.offset-md-1">
       <%= render "users/userinfo", user: @user, profile_image: @profile_image %>
     </div>
     <div class="col-8">
       <h2>Book detail</h2>
       <table class="table table-hover table-inverse">
         <tr>
-          <td><%= image_tag @user.get_profile_image(100,100) %><br>
-          <%= link_to @user.name, user_path(@user) %></td>
+          <td>
+            <%= link_to user_path(@user) do %>
+              <%= image_tag @user.get_profile_image(100,100) %><br>
+              <%= @user.name %>
+            <% end %>
+          </td>
           <td><%= link_to @hon.title, book_path(@hon) %></td>
           <td><%= @hon.body %></td>
           <% if @hon.user == current_user %>
